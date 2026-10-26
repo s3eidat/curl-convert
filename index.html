@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>cURL Convert — Free curl to fetch, axios, Python, PHP, Go &amp; Node Converter | S3eidat Tools</title>
+<meta name="description" content="Paste a curl command and get JavaScript fetch, axios, Python requests, PHP cURL, Go net/http or Node.js code. Handles shell quoting, headers, data, forms, auth and cookies. Never sends the request. Free and private.">
+<meta property="og:title" content="cURL Convert — turn curl commands into code">
+<meta property="og:description" content="curl → fetch, axios, Python, PHP, Go and Node. Runs 100% in your browser and never sends the request.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/curl-convert/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/curl-convert/">
+<meta property="og:image" content="https://s3eidat.github.io/curl-convert/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="cURL Convert — Turn curl commands into code">
+<meta name="twitter:description" content="Turn curl commands into code. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/curl-convert/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "cURL Convert", "url": "https://s3eidat.github.io/curl-convert/", "description": "Turn curl commands into code. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/curl-convert/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="curl-convert">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>cURL Convert</h1>
+    <p>Paste a curl command (for example from your browser's “Copy as cURL”) and get the same request as code. The request is only read, never sent.</p>
+  </section>
+
+  <section class="card stack">
+    <div class="row between">
+      <h2>curl command</h2>
+      <div class="row">
+        <button class="btn ghost small" id="sample">Sample</button>
+        <button class="btn ghost small" id="clear">Clear</button>
+      </div>
+    </div>
+    <label class="field"><span class="sr">curl command</span>
+      <textarea class="textarea" id="input" spellcheck="false" placeholder="curl 'https://s3eidat.github.io/api' -H 'Accept: application/json'"></textarea>
+    </label>
+    <div class="row"><span class="chip" id="status">Waiting for a curl command</span><span class="faint"><svg class="i cc-lock"><use href="#i-lock"/></svg>Nothing is sent: this page can't make network requests at all.</span></div>
+  </section>
+
+  <section class="card stack mt">
+    <div class="row between">
+      <div class="seg cc-langs" id="lang" role="group" aria-label="Language">
+        <button aria-pressed="true" data-v="fetch">fetch</button>
+        <button aria-pressed="false" data-v="axios">axios</button>
+        <button aria-pressed="false" data-v="python">Python</button>
+        <button aria-pressed="false" data-v="php">PHP</button>
+        <button aria-pressed="false" data-v="go">Go</button>
+        <button aria-pressed="false" data-v="node">Node.js</button>
+      </div>
+      <div class="row">
+        <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+        <button class="btn small" id="save"><svg class="i"><use href="#i-download"/></svg><span id="ext">.js</span></button>
+      </div>
+    </div>
+    <pre class="out cc-code" id="code" tabindex="0"></pre>
+  </section>
+
+  <section class="card stack mt">
+    <div class="row between">
+      <h2>What curl would send</h2>
+      <label class="check"><input type="checkbox" id="reveal"> Reveal secrets</label>
+    </div>
+    <div class="row" id="notes"></div>
+    <div class="tbl-wrap cc-parts" id="parts"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
